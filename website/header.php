@@ -11,3 +11,4 @@
 <div id="page" class="site">
 	<?php get_template_part( 'template-parts/header/navbar' ); ?>
 	<?php get_template_part( 'template-parts/common/network-state-wrapper' ); ?>
+	<?php get_template_part( 'template-parts/common/toast' ); ?>

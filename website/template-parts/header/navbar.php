@@ -1,6 +1,6 @@
 <?php
 /**
- * Header Navbar with Keywords & Clean Dropdowns matching edjucator.in theme
+ * Header Navbar with Direct Class 6-10 Notes Navigation Link
  *
  * @package Edjucator
  */
@@ -11,30 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <header id="masthead" class="site-header">
-	<!-- Top Bar / Target Selector Bar -->
-	<div class="top-bar">
-		<div class="header-container top-bar-inner">
-			<div class="top-bar-left">
-				<span class="top-bar-badge">NEW</span>
-				<span class="top-bar-text">🔥 Admissions Open for 2026-27 Academic Batches (JEE, NEET, CBSE Boards)</span>
-			</div>
-			<div class="top-bar-right">
-				<div class="target-select-dropdown">
-					<label for="global-target-select" class="target-label">Target Exam:</label>
-					<select class="target-select" id="global-target-select">
-						<option value="all">All Targets & Classes</option>
-						<option value="jee">JEE Main & Advanced</option>
-						<option value="neet">NEET UG Medical</option>
-						<option value="cbse-12">Class 12 Board Prep</option>
-						<option value="cbse-10">Class 10 Board Prep</option>
-						<option value="foundation">Classes 6 - 9 Foundation</option>
-					</select>
-				</div>
-				<a href="tel:18001234567" class="top-bar-link">📞 Toll Free: 1800-123-4567</a>
-			</div>
-		</div>
-	</div>
-
 	<!-- Main Purple Navbar -->
 	<div class="main-navbar">
 		<div class="header-container navbar-inner">
@@ -72,21 +48,62 @@ if ( ! defined( 'ABSPATH' ) ) {
 						)
 					);
 				} else {
-					// Vedantu navigation items
 					?>
 					<ul class="nav-menu fallback-menu">
 						<li class="menu-item active"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
 						<li class="menu-item has-dropdown">
-							<a href="#courses-section">Courses <span class="dropdown-arrow">▾</span></a>
+							<a href="#courses-section" class="nav-dropdown-link">Courses <span class="dropdown-arrow">▾</span></a>
 							<ul class="sub-menu">
+								<li><a href="#course-detail-view" class="open-featured-course">Coding Classes for Kids (Super Coders)</a></li>
 								<li><a href="#courses-section">JEE Master Batches</a></li>
 								<li><a href="#courses-section">NEET Medical Batches</a></li>
 								<li><a href="#courses-section">Class 10 & 12 Board Prep</a></li>
-								<li><a href="#courses-section">Classes 6-9 Foundation</a></li>
 							</ul>
 						</li>
+						<li class="menu-item has-dropdown has-mega-menu">
+							<a href="#class-notes-view" class="nav-dropdown-link open-class-notes-nav">Free Study Material <span class="dropdown-arrow">▾</span></a>
+							<div class="mega-menu-dropdown">
+								<div class="mega-col mega-col-categories">
+									<div class="mega-col-title">Categories</div>
+									<ul class="mega-link-list">
+										<li class="active"><a href="#class-notes-view" class="open-class-notes-nav">NCERT Solutions <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">JEE Main <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">JEE Advanced <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">NEET <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">Question and Answers <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">Popular Book Solutions <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">Subject wise Concepts <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">ICSE & State Boards <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">Worksheets <span class="arrow">›</span></a></li>
+									</ul>
+								</div>
+								<div class="mega-col mega-col-subcat">
+									<div class="mega-col-title">CBSE Prep</div>
+									<ul class="mega-link-list">
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Important Questions <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Notes <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Sample Papers <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">Previous Year Question Papers Class 12 <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">Previous Year Question Papers Class 10 <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Syllabus <span class="arrow">›</span></a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Formulas <span class="arrow">›</span></a></li>
+									</ul>
+								</div>
+								<div class="mega-col mega-col-items">
+									<div class="mega-col-title">Class 10 Papers</div>
+									<ul class="mega-link-list">
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Class 10 Maths PYQ</a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Class 10 Science PYQ</a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Class 10 English PYQ</a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Class 10 Social Science PYQ</a></li>
+										<li><a href="#class-notes-view" class="open-class-notes-nav">CBSE Class 10 Hindi PYQ</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
 						<li class="menu-item has-dropdown">
-							<a href="#exams-section">Exams <span class="dropdown-arrow">▾</span></a>
+							<a href="#exams-section" class="nav-dropdown-link">Exams <span class="dropdown-arrow">▾</span></a>
 							<ul class="sub-menu">
 								<li><a href="#exams-section">JEE Main & Advanced</a></li>
 								<li><a href="#exams-section">NEET UG Medical</a></li>
@@ -94,37 +111,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<li><a href="#exams-section">Olympiads & NTSE</a></li>
 							</ul>
 						</li>
-						<li class="menu-item has-dropdown">
-							<a href="#study-material-section">Study Material <span class="dropdown-arrow">▾</span></a>
-							<ul class="sub-menu">
-								<li><a href="#study-material-section">NCERT Solutions</a></li>
-								<li><a href="#study-material-section">Previous Year Papers (PYQ)</a></li>
-								<li><a href="#study-material-section">Revision Formula Sheets</a></li>
-								<li><a href="#study-material-section">Free Online Mock Tests</a></li>
-							</ul>
-						</li>
 						<li class="menu-item"><a href="#results-section">Results</a></li>
-						<li class="menu-item"><a href="#scholarships-section">Scholarships</a></li>
 					</ul>
 					<?php
 				}
 				?>
 			</nav>
 
-			<!-- Navbar Actions -->
+			<!-- Header Actions -->
 			<div class="header-actions">
-				<div class="header-search">
-					<form role="search" method="get" class="header-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<input type="search" class="search-field" placeholder="Search courses, NCERT..." value="<?php echo get_search_query(); ?>" name="s" />
-						<button type="submit" class="search-submit" aria-label="Search">
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-						</button>
-					</form>
-				</div>
-				<a href="#" class="btn btn-portal-teacher">Login</a>
-				<a href="#" class="btn btn-portal-student">
-					<span>Book Free Demo</span>
+				<a href="tel:987654321" class="talk-expert-link" id="talk-expert-btn">
+					<span class="expert-icon">📞</span>
+					<div class="expert-text">
+						<span class="expert-label">Talk to Expert</span>
+						<span class="expert-phone">987654321</span>
+					</div>
 				</a>
+				<button type="button" class="btn btn-portal-student" id="header-book-demo-btn">
+					<span>Book a Demo</span>
+				</button>
 			</div>
 		</div>
 	</div>
