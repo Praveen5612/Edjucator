@@ -1,0 +1,1313 @@
+/* ==========================================================================
+   Edjucator Custom Stylesheet (Vedantu Structure + edjucator.in Purple Theme + Clean Dropdowns)
+   ========================================================================== */
+
+:root {
+    /* Color Palette matching edjucator.in */
+    --purple-topbar: #4c1d95;
+    --purple-main: #6d28d9;
+    --purple-hover: #5b21b6;
+    --purple-light: #7c3aed;
+    --purple-subtle: #f8f5ff;
+    --purple-border: #e9d5ff;
+    
+    --gold-accent: #facc15;
+    --gold-text: #d97706;
+    --gold-light: #fef3c7;
+    
+    --navy-dark: #1e1b4b;
+    --slate-text: #475569;
+    --muted-text: #64748b;
+    
+    --white: #ffffff;
+    --light-bg: #faf5ff;
+    
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 20px;
+    --radius-pill: 50px;
+    
+    --shadow-sm: 0 2px 4px rgba(109, 40, 217, 0.06);
+    --shadow-md: 0 6px 16px rgba(109, 40, 217, 0.1);
+    --shadow-lg: 0 20px 40px -15px rgba(109, 40, 217, 0.18);
+    
+    --max-width: 1240px;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Global Reset & Box Sizing for 100% Screen Compatibility */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--navy-dark);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--purple-main);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--purple-hover);
+}
+
+ul {
+    list-style: none;
+}
+
+.text-center { text-align: center; }
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.site-main {
+    flex: 1;
+    width: 100%;
+}
+
+.header-container,
+.footer-container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 28px);
+}
+
+/* ==========================================================================
+   BUTTONS & COMMON UI
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    border-radius: var(--radius-pill);
+    border: none;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.84rem;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--purple-main);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(109, 40, 217, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: var(--purple-hover);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.btn-outline-purple {
+    background-color: transparent;
+    color: var(--purple-main);
+    border: 2px solid var(--purple-main);
+}
+
+.btn-outline-purple:hover {
+    background-color: var(--purple-subtle);
+    border-color: var(--purple-hover);
+}
+
+.btn-portal-student {
+    background-color: var(--white);
+    color: var(--purple-main);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.btn-portal-student:hover {
+    background-color: var(--gold-accent);
+    color: var(--navy-dark);
+}
+
+.btn-portal-teacher {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-portal-teacher:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+    color: var(--white);
+}
+
+/* Section Titles */
+.section-title-wrapper {
+    margin-bottom: clamp(32px, 5vw, 48px);
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: var(--purple-main);
+    background-color: var(--purple-border);
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.section-heading {
+    font-size: clamp(1.75rem, 4vw, 2.35rem);
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.section-subheading {
+    font-size: clamp(0.95rem, 2vw, 1.0625rem);
+    color: var(--slate-text);
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   SITE HEADER & NAVBAR (edjucator.in Theme with Clean White Dropdowns)
+   ========================================================================== */
+.site-header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--purple-topbar);
+    color: var(--white);
+    font-size: clamp(0.72rem, 1.5vw, 0.8125rem);
+    padding: 8px 0;
+    font-weight: 600;
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.top-bar-badge {
+    background-color: #ef4444;
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    white-space: nowrap;
+}
+
+.target-select-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.target-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.target-select {
+    background-color: var(--purple-hover);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+}
+
+.target-select option {
+    background-color: var(--white);
+    color: var(--navy-dark);
+    font-size: 0.85rem;
+    padding: 6px;
+}
+
+.top-bar-link {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.top-bar-link:hover {
+    color: var(--gold-accent);
+}
+
+/* Main Purple Navbar */
+.main-navbar {
+    background-color: var(--purple-main);
+    padding: 12px 0;
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Logo Badge */
+.site-logo-badge {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    padding: 6px 14px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo-text-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+    line-height: 1;
+}
+
+.logo-accent {
+    color: var(--purple-main);
+}
+
+.logo-tagline {
+    font-size: 0.52rem;
+    font-weight: 800;
+    color: var(--gold-text);
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+}
+
+/* Nav Menu */
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-menu .menu-item {
+    position: relative;
+}
+
+.nav-menu .menu-item a {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    transition: all 0.18s ease;
+}
+
+.nav-menu .menu-item a:hover {
+    color: var(--gold-accent);
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav-menu .menu-item.active a {
+    color: var(--gold-accent);
+    font-weight: 800;
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    margin-left: 2px;
+}
+
+/* Dropdown Menu Box Styling (White Clean Box) */
+.nav-menu .menu-item.has-dropdown:hover .sub-menu {
+    display: block;
+    animation: fadeIn 0.25s ease;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    border: 1px solid var(--purple-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 12px 28px rgba(109, 40, 217, 0.18);
+    min-width: 230px;
+    padding: 8px 0;
+    z-index: 100;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 10px 18px;
+    color: var(--navy-dark) !important;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-color: transparent !important;
+    border-radius: 0;
+    transition: all 0.15s ease;
+}
+
+.sub-menu li a:hover {
+    background-color: var(--purple-subtle) !important;
+    color: var(--purple-main) !important;
+    padding-left: 22px;
+}
+
+/* Header Actions & Search */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-search-form {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-pill);
+    padding: 4px 6px 4px 12px;
+}
+
+.search-field {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.85rem;
+    color: var(--white);
+    width: 140px;
+}
+
+.search-field::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.search-submit {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 4px;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 36px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 6px 7px;
+    cursor: pointer;
+}
+
+.hamburger-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+}
+
+/* ==========================================================================
+   HERO SECTION (Vedantu Structure with Purple Theme)
+   ========================================================================== */
+.hero-section {
+    padding: clamp(48px, 6vw, 72px) 0;
+    background: linear-gradient(180deg, #faf5ff 0%, #f3e8ff 100%);
+    border-bottom: 1px solid var(--purple-border);
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: clamp(32px, 5vw, 48px);
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--purple-main);
+    background-color: var(--purple-border);
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--navy-dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.hero-description {
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    color: var(--slate-text);
+    margin-bottom: 24px;
+    max-width: 580px;
+}
+
+.hero-target-chips {
+    margin-bottom: 24px;
+}
+
+.chips-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--muted-text);
+    margin-bottom: 10px;
+}
+
+.chips-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.target-chip {
+    padding: 6px 14px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+    background-color: var(--white);
+    border: 1px solid var(--purple-border);
+    border-radius: 20px;
+}
+
+.target-chip:hover,
+.target-chip.active {
+    color: var(--white);
+    background-color: var(--purple-main);
+    border-color: var(--purple-main);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.btn-hero {
+    padding: 12px 26px;
+    font-size: 1rem;
+}
+
+.trust-stats-row {
+    display: flex;
+    gap: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--purple-border);
+}
+
+.trust-stat strong {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+}
+
+.trust-stat span {
+    font-size: 0.8125rem;
+    color: var(--muted-text);
+}
+
+.hero-visual-card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.live-class-card-preview {
+    width: 100%;
+    max-width: 380px;
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--purple-border);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+.live-badge-pulse {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-color: #ef4444;
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.class-preview-image {
+    background: linear-gradient(135deg, #4c1d95, #6d28d9);
+    color: var(--white);
+    padding: 40px 24px 28px;
+}
+
+.teacher-live-badge {
+    font-size: 0.8rem;
+    color: var(--gold-accent);
+    margin-bottom: 8px;
+}
+
+.class-topic {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.student-doubts-badge {
+    font-size: 0.8rem;
+    color: var(--purple-border);
+}
+
+.class-card-details {
+    padding: 20px;
+}
+
+.class-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+    color: var(--muted-text);
+    margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   COURSES BOARD & TABS SECTION
+   ========================================================================== */
+.courses-board-section {
+    padding: clamp(48px, 6vw, 72px) 0;
+    background-color: var(--white);
+}
+
+.course-tabs-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+.course-tab-btn {
+    padding: 10px 20px;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--slate-text);
+    background-color: var(--purple-subtle);
+    border: 1px solid var(--purple-border);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.course-tab-btn:hover,
+.course-tab-btn.active {
+    background-color: var(--purple-main);
+    color: var(--white);
+    border-color: var(--purple-main);
+    box-shadow: 0 4px 10px rgba(109, 40, 217, 0.25);
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.course-card-item {
+    background-color: var(--white);
+    border: 1px solid var(--purple-border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+}
+
+.course-card-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--purple-main);
+}
+
+.course-card-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.badge-live { background-color: var(--purple-subtle); color: var(--purple-main); }
+.badge-hot { background-color: #ffedd5; color: #c2410c; }
+.badge-popular { background-color: #f3e8ff; color: #7e22ce; }
+
+.course-target {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--muted-text);
+    text-transform: uppercase;
+}
+
+.course-card-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin: 6px 0 14px;
+    line-height: 1.3;
+}
+
+.teacher-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.teacher-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: var(--purple-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teacher-name {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+}
+
+.teacher-rating {
+    font-size: 0.75rem;
+    color: var(--gold-text);
+    font-weight: 800;
+}
+
+.course-feature-list {
+    margin-bottom: 20px;
+}
+
+.course-feature-list li {
+    font-size: 0.85rem;
+    color: var(--slate-text);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.check-icon {
+    color: var(--purple-main);
+    font-weight: bold;
+}
+
+.course-price-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.price-current {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+}
+
+.price-original {
+    font-size: 0.875rem;
+    color: var(--muted-text);
+    text-decoration: line-through;
+}
+
+.price-discount {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #16a34a;
+    background-color: #dcfce7;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.course-card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.course-card-actions .btn {
+    flex: 1;
+}
+
+/* ==========================================================================
+   COMPETITIVE EXAMS & FREE RESOURCES
+   ========================================================================== */
+.exams-section,
+.study-material-section {
+    padding: clamp(48px, 6vw, 72px) 0;
+    background-color: var(--light-bg);
+    border-top: 1px solid var(--purple-border);
+}
+
+.exams-grid,
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.exam-card,
+.resource-box {
+    background-color: var(--white);
+    border: 1px solid var(--purple-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    transition: all 0.2s ease;
+}
+
+.exam-card:hover,
+.resource-box:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--purple-main);
+}
+
+.exam-card-icon,
+.resource-icon {
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+}
+
+.exam-title,
+.resource-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--navy-dark);
+}
+
+.exam-desc,
+.resource-text {
+    font-size: 0.875rem;
+    color: var(--slate-text);
+    margin-bottom: 16px;
+}
+
+.exam-highlights {
+    margin-bottom: 20px;
+}
+
+.exam-highlights li {
+    font-size: 0.8125rem;
+    color: var(--muted-text);
+    margin-bottom: 4px;
+}
+
+.exam-link,
+.resource-btn {
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: var(--purple-main);
+}
+
+/* ==========================================================================
+   TOPPERS & RESULTS BANNER
+   ========================================================================== */
+.results-banner-section {
+    padding: clamp(48px, 6vw, 72px) 0;
+    background-color: var(--navy-dark);
+    color: var(--white);
+}
+
+.results-banner-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 48px;
+    align-items: center;
+}
+
+.results-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--gold-accent);
+    letter-spacing: 0.05em;
+}
+
+.results-heading {
+    font-size: clamp(1.8rem, 4vw, 2.35rem);
+    font-weight: 800;
+    margin: 10px 0 16px;
+    line-height: 1.2;
+}
+
+.results-subtext {
+    font-size: 1rem;
+    color: var(--purple-border);
+    margin-bottom: 28px;
+}
+
+.results-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.stat-item .stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--gold-accent);
+}
+
+.stat-item .stat-label {
+    font-size: 0.8rem;
+    color: var(--purple-border);
+}
+
+.results-cards-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ranker-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+}
+
+.ranker-avatar {
+    font-size: 2rem;
+}
+
+.ranker-name {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.ranker-rank {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gold-accent);
+    margin-bottom: 6px;
+}
+
+.ranker-quote {
+    font-size: 0.84rem;
+    color: var(--purple-border);
+    font-style: italic;
+}
+
+/* ==========================================================================
+   FOOTER (edjucator.in Dark Purple Theme)
+   ========================================================================== */
+.site-footer {
+    background-color: var(--navy-dark);
+    color: var(--purple-border);
+    margin-top: auto;
+}
+
+.footer-top {
+    padding: clamp(48px, 6vw, 64px) 0 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+
+.footer-logo {
+    margin-bottom: 16px;
+}
+
+.footer-description {
+    font-size: 0.875rem;
+    color: var(--purple-border);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    background-color: var(--purple-main);
+    color: var(--white);
+}
+
+.footer-title {
+    color: var(--white);
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--purple-border);
+    font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+    color: var(--gold-accent);
+}
+
+.footer-bottom {
+    padding: 24px 0;
+    font-size: 0.875rem;
+}
+
+.footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.copyright-text {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.copyright-text strong {
+    color: var(--white);
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legal-links a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-legal-links a:hover {
+    color: var(--gold-accent);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (0-OVERLAP, FLUID LAYOUT)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .header-search {
+        display: none;
+    }
+
+    .hero-inner,
+    .results-banner-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual-card {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 860px) {
+    .top-bar-left {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .main-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--purple-main);
+        padding: 16px 24px;
+        box-shadow: var(--shadow-lg);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .main-navigation.is-active {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .nav-menu .menu-item {
+        width: 100%;
+    }
+
+    .nav-menu .menu-item a {
+        width: 100%;
+        padding: 10px 14px;
+    }
+
+    .sub-menu {
+        position: relative;
+        box-shadow: none;
+        border: none;
+        padding-left: 14px;
+        background-color: transparent !important;
+    }
+
+    .sub-menu li a {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .sub-menu li a:hover {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: var(--gold-accent) !important;
+    }
+
+    .footer-bottom-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+}
+
+
+/* ==========================================================================
+   GLOBAL UI STATE COMPONENTS (Loading, Empty, Error, Offline, Slow Network)
+   ========================================================================== */
+
+/* Network Notification Banners */
+.network-state-banner {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.875rem;
+    font-weight: 700;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease;
+}
+
+.state-offline {
+    background-color: #ef4444;
+    color: var(--white);
+}
+
+.state-slow-network {
+    background-color: #f59e0b;
+    color: var(--navy-dark);
+}
+
+.banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.banner-icon {
+    font-size: 1.1rem;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.banner-close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    color: inherit;
+    cursor: pointer;
+    padding: 0 6px;
+}
+
+/* Common State Containers */
+.state-container {
+    padding: clamp(48px, 6vw, 64px) 24px;
+    text-align: center;
+    background-color: var(--white);
+    border: 1px solid var(--purple-border);
+    border-radius: var(--radius-lg);
+    margin: 32px auto;
+    max-width: 540px;
+    box-shadow: var(--shadow-sm);
+}
+
+.state-icon-wrap {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.icon-empty {
+    background-color: var(--purple-subtle);
+    color: var(--purple-main);
+}
+
+.icon-error {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+.state-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 8px;
+}
+
+.state-message {
+    font-size: 0.95rem;
+    color: var(--slate-text);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.state-action-btn {
+    padding: 10px 24px;
+}
+
+/* Spinner for Loading State */
+.loading-spinner-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.loading-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid var(--purple-border);
+    border-top: 4px solid var(--purple-main);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 404 Not Found Badge */
+.state-number-badge {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--purple-main);
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -0.04em;
+}

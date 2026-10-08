@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edjucator - Best Online Education Platform | Live 1-to-1 Classes & Exam Prep</title>
+	<meta name="description" content="1-to-1 online tuition with expert teachers for Classes 1 to 12. JEE, NEET, CBSE Board Prep, NCERT Solutions & Free Study Material.">
+	<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+
+<div id="page" class="site">
+	<!-- Header & Navbar -->
+	<header id="masthead" class="site-header">
+		<!-- Top Bar -->
+		<div class="top-bar">
+			<div class="header-container top-bar-inner">
+				<div class="top-bar-left">
+					<span class="top-bar-badge">NEW</span>
+					<span class="top-bar-text">🔥 Admissions Open for 2026-27 Academic Batches (JEE, NEET, CBSE Boards)</span>
+				</div>
+				<div class="top-bar-right">
+					<div class="target-select-dropdown">
+						<label for="global-target-select" class="target-label">Target Exam:</label>
+						<select class="target-select" id="global-target-select">
+							<option value="all">All Targets & Classes</option>
+							<option value="jee">JEE Main & Advanced</option>
+							<option value="neet">NEET UG Medical</option>
+							<option value="cbse-12">Class 12 Board Prep</option>
+							<option value="cbse-10">Class 10 Board Prep</option>
+							<option value="foundation">Classes 6 - 9 Foundation</option>
+						</select>
+					</div>
+					<a href="tel:18001234567" class="top-bar-link">📞 Toll Free: 1800-123-4567</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Purple Navbar -->
+		<div class="main-navbar">
+			<div class="header-container navbar-inner">
+				<!-- Brand Logo Badge -->
+				<div class="site-branding">
+					<a href="#" class="site-logo-badge" rel="home">
+						<div class="logo-text-wrap">
+							<span class="logo-main">Edju<span class="logo-accent">c</span>ator</span>
+							<span class="logo-tagline">TEACH • INSPIRE • EMPOWER</span>
+						</div>
+					</a>
+				</div>
+
+				<!-- Mobile Menu Toggle Button -->
+				<button class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle Navigation Menu" id="mobile-menu-toggle">
+					<span class="hamburger-bar"></span>
+					<span class="hamburger-bar"></span>
+					<span class="hamburger-bar"></span>
+				</button>
+
+				<!-- Primary Navigation Menu -->
+				<nav id="site-navigation" class="main-navigation">
+					<ul class="nav-menu fallback-menu">
+						<li class="menu-item active"><a href="#">Home</a></li>
+						<li class="menu-item has-dropdown">
+							<a href="#courses-section">Courses <span class="dropdown-arrow">▾</span></a>
+							<ul class="sub-menu">
+								<li><a href="#courses-section">JEE Master Batches</a></li>
+								<li><a href="#courses-section">NEET Medical Batches</a></li>
+								<li><a href="#courses-section">Class 10 & 12 Board Prep</a></li>
+								<li><a href="#courses-section">Classes 6-9 Foundation</a></li>
+							</ul>
+						</li>
+						<li class="menu-item has-dropdown">
+							<a href="#exams-section">Exams <span class="dropdown-arrow">▾</span></a>
+							<ul class="sub-menu">
+								<li><a href="#exams-section">JEE Main & Advanced</a></li>
+								<li><a href="#exams-section">NEET UG Medical</a></li>
+								<li><a href="#exams-section">CUET Entrance Test</a></li>
+								<li><a href="#exams-section">Olympiads & NTSE</a></li>
+							</ul>
+						</li>
+						<li class="menu-item has-dropdown">
+							<a href="#study-material-section">Study Material <span class="dropdown-arrow">▾</span></a>
+							<ul class="sub-menu">
+								<li><a href="#study-material-section">NCERT Solutions</a></li>
+								<li><a href="#study-material-section">Previous Year Papers (PYQ)</a></li>
+								<li><a href="#study-material-section">Revision Formula Sheets</a></li>
+								<li><a href="#study-material-section">Free Online Mock Tests</a></li>
+							</ul>
+						</li>
+						<li class="menu-item"><a href="#results-section">Results</a></li>
+						<li class="menu-item"><a href="#scholarships-section">Scholarships</a></li>
+					</ul>
+				</nav>
+
+				<!-- Navbar Actions -->
+				<div class="header-actions">
+					<div class="header-search">
+						<form role="search" method="get" class="header-search-form" action="#">
+							<input type="search" class="search-field" placeholder="Search courses, NCERT..." name="s" />
+							<button type="submit" class="search-submit" aria-label="Search">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+							</button>
+						</form>
+					</div>
+					<a href="#" class="btn btn-portal-teacher">Login</a>
+					<a href="#" class="btn btn-portal-student">
+						<span>Book Free Demo</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Global Network Banners -->
+	<div class="network-state-banner state-offline" id="global-offline-banner" style="display: none;">
+		<div class="header-container banner-inner">
+			<span class="banner-icon">📡</span>
+			<span class="banner-text">You are currently offline. Please check your internet connection.</span>
+			<button type="button" class="banner-close-btn" onclick="document.getElementById('global-offline-banner').style.display='none';">&times;</button>
+		</div>
+	</div>
+
+	<div class="network-state-banner state-slow-network" id="global-slow-network-banner" style="display: none;">
+		<div class="header-container banner-inner">
+			<span class="banner-icon">⚠️</span>
+			<span class="banner-text">Slow network connection detected. Video streams and interactive classes may buffer.</span>
+			<button type="button" class="banner-close-btn" onclick="document.getElementById('global-slow-network-banner').style.display='none';">&times;</button>
+		</div>
+	</div>
+
+	<main id="primary" class="site-main">
+		<!-- Hero Section -->
+		<section class="hero-section edjucator-hero">
+			<div class="header-container hero-inner">
+				<div class="hero-content">
+					<h1 class="hero-title">Best Online Education Platform</h1>
+					<p class="hero-description">
+						1-to-1 online tuition with expert teachers for Classes 1 to 12. All Boards. All Subjects.
+					</p>
+					
+					<ul class="hero-checklist">
+						<li class="checklist-item">
+							<div class="check-icon-badge">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 10-4 4-2-2"/><path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z"/></svg>
+							</div>
+							<span>1-to-1 Live Classes</span>
+						</li>
+						<li class="checklist-item">
+							<div class="check-icon-badge">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+							</div>
+							<span>Trusted & Verified Teachers</span>
+						</li>
+						<li class="checklist-item">
+							<div class="check-icon-badge">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+							</div>
+							<span>Flexible Timings</span>
+						</li>
+					</ul>
+
+					<div class="hero-actions">
+						<a href="#courses-section" class="btn btn-primary btn-hero">Book Free Demo Class</a>
+						<a href="#how-it-works" class="btn btn-outline-purple btn-hero">How It Works</a>
+					</div>
+				</div>
+				
+				<div class="hero-visual-container">
+					<div class="hero-image-card">
+						<div class="floating-badge badge-live">
+							<span class="live-dot"></span> Live 1-to-1 Class
+						</div>
+						<div class="floating-badge badge-rating">
+							★ 4.9/5
+						</div>
+
+						<div class="classroom-image-placeholder">
+							<div class="class-overlay-info">
+								<span class="class-tag">Interactive Classroom</span>
+								<h3>Personalized 1-on-1 Learning</h3>
+							</div>
+						</div>
+
+						<div class="floating-badge badge-mentors">
+							<span class="mentor-icon">📅</span>
+							<div class="mentor-text">
+								<strong>Expert Mentors</strong>
+								<span>500+ Tutors</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Courses Section -->
+		<section id="courses-section" class="courses-board-section">
+			<div class="header-container">
+				<div class="section-title-wrapper text-center">
+					<span class="section-tag">POPULAR BATCHES</span>
+					<h2 class="section-heading">Explore Live Courses & Classroom Batches</h2>
+					<p class="section-subheading">Choose your target exam or class to start learning with India’s top Master Teachers</p>
+				</div>
+
+				<div class="course-tabs-bar">
+					<button class="course-tab-btn active" data-filter="all">All Courses</button>
+					<button class="course-tab-btn" data-filter="jee">JEE Main & Advanced</button>
+					<button class="course-tab-btn" data-filter="neet">NEET Medical</button>
+					<button class="course-tab-btn" data-filter="cbse-10">Class 10 Board</button>
+					<button class="course-tab-btn" data-filter="foundation">Foundation (Class 6-9)</button>
+				</div>
+
+				<div class="courses-grid" id="courses-grid-container">
+					<div class="course-card-item" data-category="jee">
+						<div class="course-card-badge badge-live">LIVE BATCH</div>
+						<div class="course-card-header">
+							<span class="course-target">Target: JEE Main & Advanced 2027</span>
+							<h3 class="course-card-title">JEE Master 2-Year Complete Batch</h3>
+							<div class="teacher-info">
+								<div class="teacher-avatar">👨‍🏫</div>
+								<div class="teacher-details">
+									<span class="teacher-name">IITian Master Faculty Team</span>
+									<span class="teacher-rating">★ 4.9 (12,400+ Students)</span>
+								</div>
+							</div>
+						</div>
+						<div class="course-card-body">
+							<ul class="course-feature-list">
+								<li><span class="check-icon">✓</span> 500+ Live Interactive Classes</li>
+								<li><span class="check-icon">✓</span> 2-Teacher Model (Dedicated Doubt Experts)</li>
+								<li><span class="check-icon">✓</span> Daily Practice Papers (DPP) & Solutions</li>
+								<li><span class="check-icon">✓</span> All India Test Series (AITS)</li>
+							</ul>
+						</div>
+						<div class="course-card-footer">
+							<div class="course-price-wrap">
+								<span class="price-current">₹24,999</span>
+								<span class="price-original">₹49,999</span>
+								<span class="price-discount">50% OFF</span>
+							</div>
+							<div class="course-card-actions">
+								<a href="#" class="btn btn-outline-purple btn-sm">Details</a>
+								<a href="#" class="btn btn-primary btn-sm">Join Batch</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="course-card-item" data-category="neet">
+						<div class="course-card-badge badge-hot">HOT SELLER</div>
+						<div class="course-card-header">
+							<span class="course-target">Target: NEET Medical 2026</span>
+							<h3 class="course-card-title">NEET Achievers 1-Year Dropper Batch</h3>
+							<div class="teacher-info">
+								<div class="teacher-avatar">👩‍⚕️</div>
+								<div class="teacher-details">
+									<span class="teacher-name">Dr. Sharma & Senior Doctors</span>
+									<span class="teacher-rating">★ 4.95 (18,900+ Students)</span>
+								</div>
+							</div>
+						</div>
+						<div class="course-card-body">
+							<ul class="course-feature-list">
+								<li><span class="check-icon">✓</span> Complete Bio, Physics & Chem Syllabus</li>
+								<li><span class="check-icon">✓</span> Instant 24/7 Doubt Resolution</li>
+								<li><span class="check-icon">✓</span> 15,000+ NCERT Based Question Bank</li>
+								<li><span class="check-icon">✓</span> Weekly Mock Tests with AIR Ranking</li>
+							</ul>
+						</div>
+						<div class="course-card-footer">
+							<div class="course-price-wrap">
+								<span class="price-current">₹19,999</span>
+								<span class="price-original">₹39,999</span>
+								<span class="price-discount">50% OFF</span>
+							</div>
+							<div class="course-card-actions">
+								<a href="#" class="btn btn-outline-purple btn-sm">Details</a>
+								<a href="#" class="btn btn-primary btn-sm">Join Batch</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="course-card-item" data-category="cbse-10">
+						<div class="course-card-badge badge-popular">POPULAR</div>
+						<div class="course-card-header">
+							<span class="course-target">Class 10 CBSE Board 2026</span>
+							<h3 class="course-card-title">Class 10 Board Toppers Super 30</h3>
+							<div class="teacher-info">
+								<div class="teacher-avatar">👨‍🎓</div>
+								<div class="teacher-details">
+									<span class="teacher-name">Prof. Verma & Senior Educators</span>
+									<span class="teacher-rating">★ 4.85 (9,200+ Students)</span>
+								</div>
+							</div>
+						</div>
+						<div class="course-card-body">
+							<ul class="course-feature-list">
+								<li><span class="check-icon">✓</span> Maths, Science, English & SST Covered</li>
+								<li><span class="check-icon">✓</span> Chapter-wise NCERT Exemplar Solutions</li>
+								<li><span class="check-icon">✓</span> 10 Years Past Solved Papers (PYQ)</li>
+								<li><span class="check-icon">✓</span> Board Answer Writing Masterclasses</li>
+							</ul>
+						</div>
+						<div class="course-card-footer">
+							<div class="course-price-wrap">
+								<span class="price-current">₹9,999</span>
+								<span class="price-original">₹19,999</span>
+								<span class="price-discount">50% OFF</span>
+							</div>
+							<div class="course-card-actions">
+								<a href="#" class="btn btn-outline-purple btn-sm">Details</a>
+								<a href="#" class="btn btn-primary btn-sm">Join Batch</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="course-card-item" data-category="foundation">
+						<div class="course-card-badge badge-live">FOUNDATION</div>
+						<div class="course-card-header">
+							<span class="course-target">Classes 8 & 9 Foundation</span>
+							<h3 class="course-card-title">Olympiad & NTSE Early Starters</h3>
+							<div class="teacher-info">
+								<div class="teacher-avatar">🚀</div>
+								<div class="teacher-details">
+									<span class="teacher-name">Foundation Master Mentors</span>
+									<span class="teacher-rating">★ 4.88 (6,500+ Students)</span>
+								</div>
+							</div>
+						</div>
+						<div class="course-card-body">
+							<ul class="course-feature-list">
+								<li><span class="check-icon">✓</span> Builds Strong Logical & Analytical Thinking</li>
+								<li><span class="check-icon">✓</span> Mental Ability & Math Olympiad Prep</li>
+								<li><span class="check-icon">✓</span> Interactive Quizzes & Leaderboards</li>
+								<li><span class="check-icon">✓</span> Regular Parent-Teacher Feedback Meetings</li>
+							</ul>
+						</div>
+						<div class="course-card-footer">
+							<div class="course-price-wrap">
+								<span class="price-current">₹11,999</span>
+								<span class="price-original">₹23,999</span>
+								<span class="price-discount">50% OFF</span>
+							</div>
+							<div class="course-card-actions">
+								<a href="#" class="btn btn-outline-purple btn-sm">Details</a>
+								<a href="#" class="btn btn-primary btn-sm">Join Batch</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Competitive Exams Section -->
+		<section id="exams-section" class="exams-section">
+			<div class="header-container">
+				<div class="section-title-wrapper text-center">
+					<span class="section-tag">TEST SERIES & EXAM PREP</span>
+					<h2 class="section-heading">Target Top Ranks in Competitive Exams</h2>
+					<p class="section-subheading">Comprehensive exam practice, previous year question analysis, and national mock tests</p>
+				</div>
+
+				<div class="exams-grid">
+					<div class="exam-card">
+						<div class="exam-card-icon icon-jee">⚡</div>
+						<h3 class="exam-title">JEE Main & Advanced</h3>
+						<p class="exam-desc">Interactive live courses, chapter-wise test series & 15 years PYQ paper analysis.</p>
+						<ul class="exam-highlights">
+							<li>30+ Full Length Mock Tests</li>
+							<li>Detailed All India Rank Analysis</li>
+						</ul>
+						<a href="#" class="exam-link">Explore JEE Prep →</a>
+					</div>
+
+					<div class="exam-card">
+						<div class="exam-card-icon icon-neet">🩺</div>
+						<h3 class="exam-title">NEET UG Medical</h3>
+						<p class="exam-desc">NCERT line-by-line bio lectures, speed & accuracy drill tests, and flashcards.</p>
+						<ul class="exam-highlights">
+							<li>10,000+ NCERT MCQ Bank</li>
+							<li>Special Biology Master Modules</li>
+						</ul>
+						<a href="#" class="exam-link">Explore NEET Prep →</a>
+					</div>
+
+					<div class="exam-card">
+						<div class="exam-card-icon icon-cuet">🎓</div>
+						<h3 class="exam-title">CUET (UG) Entrance</h3>
+						<p class="exam-desc">Domain subjects, General Test, and English language mock test packages for top university entrance.</p>
+						<ul class="exam-highlights">
+							<li>Topic-wise Speed Tests</li>
+							<li>University Cut-off Predictor</li>
+						</ul>
+						<a href="#" class="exam-link">Explore CUET Prep →</a>
+					</div>
+
+					<div class="exam-card">
+						<div class="exam-card-icon icon-olympiad">🏆</div>
+						<h3 class="exam-title">Olympiads & NTSE</h3>
+						<p class="exam-desc">Advanced problem solving for NSO, IMO, NSTSE, and Mental Ability Olympiads.</p>
+						<ul class="exam-highlights">
+							<li>Higher-Order Thinking Skills (HOTS)</li>
+							<li>National Level Mock Contests</li>
+						</ul>
+						<a href="#" class="exam-link">Explore Olympiads →</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Toppers & Results Section -->
+		<section id="results-section" class="results-banner-section">
+			<div class="header-container">
+				<div class="results-banner-inner">
+					<div class="results-text-col">
+						<span class="results-badge">PROVEN RESULTS 2025-26</span>
+						<h2 class="results-heading">Our Students Excel in Every Major Competitive Exam</h2>
+						<p class="results-subtext">Over 15,000+ Edjucator students qualified in JEE Advanced, NEET & CBSE Board Exams with top All India Ranks!</p>
+						<div class="results-stats-row">
+							<div class="stat-item">
+								<span class="stat-number">AIR 4</span>
+								<span class="stat-label">JEE Advanced 2025</span>
+							</div>
+							<div class="stat-item">
+								<span class="stat-number">AIR 9</span>
+								<span class="stat-label">NEET Medical 2025</span>
+							</div>
+							<div class="stat-item">
+								<span class="stat-number">99.8%</span>
+								<span class="stat-label">Highest CBSE Board Score</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="results-cards-col">
+						<div class="ranker-card">
+							<div class="ranker-avatar">🎓</div>
+							<div class="ranker-info">
+								<span class="ranker-name">Aarav Sharma</span>
+								<span class="ranker-rank">AIR 4 • JEE Advanced</span>
+								<p class="ranker-quote">"The 2-Teacher model and 24/7 doubt resolution gave me the exact speed & confidence needed for IIT."</p>
+							</div>
+						</div>
+						<div class="ranker-card">
+							<div class="ranker-avatar">👩‍⚕️</div>
+							<div class="ranker-info">
+								<span class="ranker-name">Priya Patel</span>
+								<span class="ranker-rank">AIR 9 • NEET Medical</span>
+								<p class="ranker-quote">"NCERT line-by-line master classes and test series were crucial for my NEET 715/720 score!"</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Free Study Material Section -->
+		<section id="study-material-section" class="study-material-section">
+			<div class="header-container">
+				<div class="section-title-wrapper text-center">
+					<span class="section-tag">FREE RESOURCES</span>
+					<h2 class="section-heading">Free Study Material & Question Bank</h2>
+					<p class="section-subheading">Download verified NCERT solutions, previous year solved papers, and formula revision sheets</p>
+				</div>
+
+				<div class="resources-grid">
+					<div class="resource-box">
+						<div class="resource-icon">📘</div>
+						<h4 class="resource-title">NCERT Solutions</h4>
+						<p class="resource-text">Step-by-step solutions for Maths & Science (Classes 6 to 12).</p>
+						<a href="#" class="resource-btn">Access Solutions →</a>
+					</div>
+					<div class="resource-box">
+						<div class="resource-icon">📝</div>
+						<h4 class="resource-title">Previous Year Papers</h4>
+						<p class="resource-text">10+ Years solved question papers with official answer keys.</p>
+						<a href="#" class="resource-btn">Download PYQs →</a>
+					</div>
+					<div class="resource-box">
+						<div class="resource-icon">⚡</div>
+						<h4 class="resource-title">Revision Formula Sheets</h4>
+						<p class="resource-text">Quick revision mind maps, formula sheets & short notes.</p>
+						<a href="#" class="resource-btn">Get Revision Notes →</a>
+					</div>
+					<div class="resource-box">
+						<div class="resource-icon">🎯</div>
+						<h4 class="resource-title">Free Mock Tests</h4>
+						<p class="resource-text">Chapter-wise online quizzes & full length practice tests.</p>
+						<a href="#" class="resource-btn">Take Free Test →</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer id="colophon" class="site-footer">
+		<div class="footer-top">
+			<div class="footer-container footer-grid">
+				<div class="footer-col footer-brand-col">
+					<a href="#" class="site-logo-badge footer-logo" rel="home">
+						<div class="logo-text-wrap">
+							<span class="logo-main">Edju<span class="logo-accent">c</span>ator</span>
+							<span class="logo-tagline">TEACH • INSPIRE • EMPOWER</span>
+						</div>
+					</a>
+					<p class="footer-description">
+						Best Online Education Platform providing 1-to-1 live interactive classes, competitive exam prep (JEE & NEET), NCERT solutions, and study material for Classes 1 to 12.
+					</p>
+					<div class="footer-social-links">
+						<a href="#" class="social-link" aria-label="Facebook">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+						</a>
+						<a href="#" class="social-link" aria-label="Instagram">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+						</a>
+						<a href="#" class="social-link" aria-label="YouTube">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.37z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer-col">
+					<h4 class="footer-title">Popular Courses</h4>
+					<ul class="footer-links">
+						<li><a href="#courses-section">JEE Main & Advanced Master Batch</a></li>
+						<li><a href="#courses-section">NEET UG Medical Achievers Batch</a></li>
+						<li><a href="#courses-section">Class 10 CBSE Board Toppers</a></li>
+						<li><a href="#courses-section">Class 12 Physics & Chemistry</a></li>
+						<li><a href="#courses-section">Foundation Classes 6-9 Olympiad</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h4 class="footer-title">Free Study Material</h4>
+					<ul class="footer-links">
+						<li><a href="#study-material-section">NCERT Solutions (Class 6-12)</a></li>
+						<li><a href="#study-material-section">10+ Years PYQ Solved Papers</a></li>
+						<li><a href="#study-material-section">Formula & Revision Notes</a></li>
+						<li><a href="#study-material-section">All India Free Mock Tests</a></li>
+						<li><a href="#scholarships-section">Scholarship Admission Test</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col footer-contact-col">
+					<h4 class="footer-title">Quick Links & Support</h4>
+					<ul class="footer-links footer-support-links">
+						<li><a href="#">🎓 Student Portal Login</a></li>
+						<li><a href="#">👨‍🏫 Teacher Portal Login</a></li>
+						<li><a href="#results-section">⭐ Student Reviews & Results</a></li>
+						<li><a href="tel:18001234567">📞 Toll Free: 1800-123-4567</a></li>
+						<li><a href="mailto:info@edjucator.in">✉️ Email: info@edjucator.in</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="footer-container footer-bottom-inner">
+				<p class="copyright-text">&copy; 2026 <strong>Edjucator</strong> (edjucator.in). All rights reserved.</p>
+				<ul class="footer-legal-links">
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms of Service</a></li>
+					<li><a href="#contact-section">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
